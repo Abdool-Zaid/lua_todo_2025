@@ -16,7 +16,8 @@ function main_loop()
     print("\n command list  \n l --------- list tasks  \n u <index> - update task \n a --------- add task \n r <index> - remove task \n e --------- exit")
     print('\n awaiting input...')
     local inp = io.read()
-    if inp == 'e'then return nil end --handle exit since the rest of the loop is not needed
+    -- print(model.commands[5])
+    if inp == model.commands[5] then return nil end --handle exit since the rest of the loop is not needed
     local func_index =controller.find_in_table(model.commands,inp)
     model.command_list[func_index]()
     main_loop()
