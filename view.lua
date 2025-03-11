@@ -17,7 +17,9 @@ function main_loop()
     print('\n awaiting input...')
     local inp = io.read()
     if inp == 'e'then return nil end --handle exit since the rest of the loop is not needed
-    print(controller.find_in_table(model.commands,inp))
+    local func_index =controller.find_in_table(model.commands,inp)
+    model.command_list[func_index]()
+    main_loop()
 
 end
 

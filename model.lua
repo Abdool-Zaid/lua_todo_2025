@@ -1,9 +1,16 @@
+local controller = require 'controller'
 local res = {
     test = 'string from model',
     
 }
 res.data ={}
 res.commands = {'l',"u",'a','r','e'}
+res.command_list ={
+    controller.read_all,
+    controller.update,
+    controller.create,
+    controller.read,
+}
 local path = 'data.csv'
 
 
