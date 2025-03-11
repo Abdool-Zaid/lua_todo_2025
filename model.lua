@@ -3,9 +3,11 @@ local res = {
     
 }
 res.data ={}
+local path = 'data.csv'
+
+
 function res.init()
     print('Initializing data from disk...')
-    local path = 'data.csv'
     local file, err
     
     -- Try to open file for reading first
@@ -19,10 +21,7 @@ function res.init()
             print('Error creating file: ' .. err)
             return false
         end
-        -- Write initial content if needed
-        file:write("")
-        file:close()
-        
+
         -- Reopen for reading
         file, err = io.open(path, "rb")
         if not file then
@@ -46,5 +45,8 @@ end
 
 function res.write()
     print('should write to disk')
+
+    -- file:write("")
+        -- file:close()
 end
 return res
