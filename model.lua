@@ -3,6 +3,7 @@ local res = {
     
 }
 res.data ={}
+res.commands = {'l',"u",'a','r','e'}
 local path = 'data.csv'
 
 

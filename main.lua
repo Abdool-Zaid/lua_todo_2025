@@ -8,3 +8,4 @@ local view = require 'view'
 -- print(controller.test)
 
 view.init()
+-- todo , add help option
