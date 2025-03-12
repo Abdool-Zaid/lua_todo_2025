@@ -17,7 +17,6 @@ function main_loop()
     print('\n awaiting input...')
     local inp = io.read()
     inp = controller.sanitise_input(inp)
-    print(inp[1], inp[2])
     if inp[1] == model.commands[5] then return nil end --handle exit since the rest of the loop is not needed
     local func_index =controller.find_in_table(model.commands,inp[1])
     model.command_list[func_index](model.data, inp[2])

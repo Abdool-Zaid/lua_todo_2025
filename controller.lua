@@ -30,12 +30,16 @@ end
 function res.update(tbl)
     print('should update a single task')
 end
+
 function res.delete(tbl,inp )
     -- print('should remove a single task')
-    print('given inp= ' .. inp)
---    local val = sanitise_input(inp)
-
+    -- print('given inp= ' .. inp)
+    print('val '.. inp)
+    table.remove(tbl,inp)
+    print('removed task at index: '.. inp)
+    
 end
+
 function res.find_in_table(tbl, el)
     for k, v in pairs(tbl) do
         if v == el then
@@ -44,6 +48,7 @@ function res.find_in_table(tbl, el)
     end
     return nil
 end
+
 function res.sanitise_input(inp)
     local res = {}
     for match in string.gmatch(inp, "[^" .. " " .. "]+") do
