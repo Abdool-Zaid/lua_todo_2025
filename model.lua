@@ -9,7 +9,7 @@ res.command_list ={
     controller.read_all,
     controller.update,
     controller.create,
-    controller.read,
+    controller.delete,
 }
 local path = 'data.csv'
 
