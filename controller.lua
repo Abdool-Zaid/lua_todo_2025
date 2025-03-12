@@ -27,8 +27,13 @@ function res.read_all(tbl)
     end
 
 end
-function res.update(tbl)
-    print('should update a single task')
+function res.update(tbl, inp)
+    -- print('should update a single task at index '.. inp)
+    print('update task '.. inp.. ' to..')
+    local updated_task= io.read()
+    table.remove(tbl, inp)
+    table.insert(tbl, inp, updated_task)
+    print('task '.. inp .. ' has been updates')
 end
 
 function res.delete(tbl,inp )
