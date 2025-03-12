@@ -12,7 +12,7 @@ function res.create(tbl)
     print('new task added at index: '.. #tbl)
     
 end
-function res.read(tbl)
+function res.read(tbl, inp)
     print('should return a single task')
 end
 function res.read_all(tbl)
@@ -39,7 +39,6 @@ end
 function res.delete(tbl,inp )
     -- print('should remove a single task')
     -- print('given inp= ' .. inp)
-    print('val '.. inp)
     table.remove(tbl,inp)
     print('removed task at index: '.. inp)
     

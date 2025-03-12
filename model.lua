@@ -52,10 +52,23 @@ end
 
 
 
-function res.write()
-    print('should write to disk')
-
-    -- file:write("")
-        -- file:close()
+function res.write(tbl)
+    if #tbl== 0 then
+        -- print('nothing to write to disk')
+    else
+        -- print('should write to disk '.. #tbl)
+        local res = ''
+        for i= 1, #tbl   do
+            res = res .. tbl[i] ..  ","
+        end
+        -- print(res)
+    end
+        local file,err = io.open(path,'w')
+    if file then
+        file:write(tostring(res))
+        file:close()
+    else
+        print("error:", err)
+    end
 end
 return res

@@ -18,8 +18,12 @@ function main_loop()
     local inp = io.read()
     inp = controller.sanitise_input(inp)
     if inp[1] == model.commands[5] then return nil end --handle exit since the rest of the loop is not needed
+    if controller.find_in_table(model.commands, inp[1])== nil then print('no such command')
+    else
     local func_index =controller.find_in_table(model.commands,inp[1])
     model.command_list[func_index](model.data, inp[2])
+    model.write(model.data)
+    end
     main_loop()
 
 end
