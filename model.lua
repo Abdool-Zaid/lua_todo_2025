@@ -43,7 +43,8 @@ function res.init()
     file:close()
     
     -- Store and verify data
-    res.data = content or ""
+    -- res.data = content or
+    if #content>0 then table.insert(res.data,content)end
     print('Data loaded successfully. Length: ' .. #res.data .. ' bytes')
     
     return true
