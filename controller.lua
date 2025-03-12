@@ -1,3 +1,4 @@
+
 local res = {    
     test = 'string from controller'
 }
@@ -8,8 +9,17 @@ end
 function res.read()
     print('should return a single task')
 end
-function res.read_all()
-    print('should return all tasks')
+function res.read_all(tbl)
+    -- print('should return all tasks')
+    -- print(#tbl)
+    if #tbl==0 then 
+        print('no data available')
+    else
+        for i =0 , #tbl do
+            print( i .. "--" .. tbl[i] )
+        end
+    end
+
 end
 function res.update()
     print('should update a single task')
@@ -25,4 +35,6 @@ function res.find_in_table(tbl, el)
     end
     return nil
 end
+
+
 return res

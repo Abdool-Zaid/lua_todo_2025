@@ -19,7 +19,7 @@ function main_loop()
     -- print(model.commands[5])
     if inp == model.commands[5] then return nil end --handle exit since the rest of the loop is not needed
     local func_index =controller.find_in_table(model.commands,inp)
-    model.command_list[func_index]()
+    model.command_list[func_index](model.data)
     main_loop()
 
 end
